@@ -7,6 +7,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { h, s } from "hastscript";
 import sitemap from "@astrojs/sitemap";
+import tailwind from "@astrojs/tailwind";
 const DEFAULT_LAYOUT = "/src/layouts/Section.astro";
 function setDefaultLayout() {
   return function (_, file) {
@@ -15,10 +16,12 @@ function setDefaultLayout() {
   };
 }
 
+// https://astro.build/config
 export default defineConfig({
-  integrations: [react(), mdx(), sitemap()],
+  integrations: [react(), mdx(), sitemap(), tailwind()],
   site: "https://docs.axelar.dev",
   trailingSlash: "always",
+
   markdown: {
     remarkPlugins: [
       setDefaultLayout,

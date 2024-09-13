@@ -1,3 +1,5 @@
+export const permanentNavigation = ["learn", "resources"];
+
 export const getNavigation = (section) => {
   const nav: any[] = [];
   if (section === "dev") {

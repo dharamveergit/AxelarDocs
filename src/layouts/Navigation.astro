@@ -1,4 +1,6 @@
 ---
+import { getCollection } from "astro:content";
+import { generateNavigation } from "../utils/generateNavigation";
 import { getNavigation } from "./navigation.ts";
 
 const section = Astro.url.pathname?.match(/\/([^\/]*)\//)?.[1];
@@ -6,6 +8,8 @@ const navigation = getNavigation(section);
 // #TODO rewrite this more functionally
 // Right now it supports 2 layers of nesting via nested ifs
 // Due to limitations in Astro template syntax
+
+
 ---
 
 <div class="mobile nav-header">
