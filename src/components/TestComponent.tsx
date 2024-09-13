@@ -10,8 +10,8 @@ const TestComponent = ({ nav }: { nav: Navigation[] }) => {
           return (
             <button
               onClick={() => setCurrent(item)}
-              className={`border-2 ${
-                item === current ? "border-red-500" : "border-black"
+              className={`border-2 px-5 py-3 ${
+                item === current ? "bg-blue-500" : "bg-black text-white"
               }`}
               key={item}
             >
@@ -36,7 +36,7 @@ export default TestComponent;
 const Nav = ({ nav, index }: { nav: Navigation[]; index: number }) => {
   return (
     <div
-      key={`index + ${Math.random()}`}
+      key={`index + ${Math.random()} + $`}
       style={{
         paddingLeft: `${index * 20}px`,
         display: "flex",
@@ -45,13 +45,13 @@ const Nav = ({ nav, index }: { nav: Navigation[]; index: number }) => {
       }}
       className="mt-3"
     >
-      {nav?.map((item) => {
+      {nav?.map((item, i) => {
         return item.children ? (
-          <div>
+          <div key={i}>
             <p
-              className="font-bold flex gap-2 border-b "
+              className="font-bold flex gap-2  border-b "
               style={{
-                color: index === 0 ? "red" : "black",
+                color: index === 0 ? "blue" : "black",
               }}
             >
               {item.title}
@@ -76,7 +76,11 @@ const Nav = ({ nav, index }: { nav: Navigation[]; index: number }) => {
             <Nav nav={item.children} index={index + 1} />
           </div>
         ) : (
-          <a href={`/${item.href}/`} className="underline text-blue-500">
+          <a
+            key={i}
+            href={`/${item.href}/`}
+            className="underline text-blue-500"
+          >
             {item.title}
           </a>
         );
