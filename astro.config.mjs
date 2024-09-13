@@ -20,7 +20,6 @@ function setDefaultLayout() {
 export default defineConfig({
   integrations: [react(), mdx(), sitemap(), tailwind()],
   site: "https://docs.axelar.dev",
-  trailingSlash: "always",
 
   markdown: {
     remarkPlugins: [
