@@ -1,5 +1,6 @@
 ---
 import '@/styles/global.css';
+import Section from '@/layouts/Section.astro';
 import { getCollection } from "astro:content";
 import { generateNavigation } from "../utils/generateNavigation";
 import TestComponent from "../components/TestComponent";
@@ -9,6 +10,7 @@ const nav = generateNavigation(docs)
 
 
 ---
+<Section >
 <div class="p-10 flex flex-col gap-20">
 <p class="text-4xl ">
     
@@ -17,4 +19,4 @@ const nav = generateNavigation(docs)
 <TestComponent
 client:load
     nav={nav}
-/></div>
+/></div></Section>
