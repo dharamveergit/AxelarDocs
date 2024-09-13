@@ -4,13 +4,13 @@ const mainNav = ["Dev", "Validator", "Node"];
 const TestComponent = ({ nav }: { nav: Navigation[] }) => {
   const [current, setCurrent] = React.useState("Dev");
   return (
-    <div>
-      <div className="flex gap-4 items-center">
+    <div className="flex flex-col gap-10">
+      <div className="flex items-center divide-x divide-gray-700">
         {mainNav?.map((item) => {
           return (
             <button
               onClick={() => setCurrent(item)}
-              className={`border-2 px-5 py-3 ${
+              className={` px-5 py-3  ${
                 item === current ? "bg-blue-500" : "bg-black text-white"
               }`}
               key={item}
