@@ -23,12 +23,10 @@ const {
   className,
 } = Astro.props;
 
-const shownTitle = title
-  ? title + ` | Axelar Documentation`
-  : "Axelar Documentation";
+const shownTitle = title ? title : "Axelar Documentation";
 const shownDescription =
   description ||
-  "The Axelar Documentation tells you how to get started and be successful using Axelar. Axelar allows developers to build interchain dApps that connect to any blockchain. ";
+  "Axelar allows developers to build interchain dApps that connect to any blockchain.";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -163,7 +161,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       localStorage.setItem("theme", isDark ? "dark" : "light");
       document.documentElement.setAttribute(
         "data-theme",
-        isDark ? "vitesse-dark" : "light-plus"
+        isDark ? "vitesse-dark" : "light-plus",
       );
     };
 

@@ -130,7 +130,11 @@ export default ({
           : "hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer"
       } rounded-full flex items-center `}
     >
-      <img src="/images/wallets/metamask.png" alt="" className="size-5" />
+      <img
+        src="/images/wallets/metamask.png"
+        alt="MetaMask logo"
+        className="size-5"
+      />
     </button>
   );
 

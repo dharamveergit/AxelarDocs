@@ -43,7 +43,7 @@ export default ({ environment = "mainnet" }) => {
               {chain_data?.image && (
                 <img
                   src={chain_data.image}
-                  alt=""
+                  alt={`${chain_data?.name} logo`}
                   className="rounded-lg size-12"
                 />
               )}
@@ -83,7 +83,7 @@ export default ({ environment = "mainnet" }) => {
               {other_chain_data?.image && (
                 <img
                   src={other_chain_data.image}
-                  alt=""
+                  alt={`${other_chain_data?.name} logo`}
                   className={`${["fetch"].includes(other_chain_data.id) ? "bg-background rounded-lg size-12 " : "rounded-lg size-12"}`}
                 />
               )}

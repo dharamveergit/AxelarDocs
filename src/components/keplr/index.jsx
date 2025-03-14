@@ -43,7 +43,12 @@ export default ({ environment = "mainnet", chain }) => {
       }}
       className="flex keplr-button"
     >
-      <img src="/images/wallets/keplr.png" alt="" width={16} height={16} />
+      <img
+        src="/images/wallets/keplr.png"
+        alt="Keplr logo"
+        width={16}
+        height={16}
+      />
     </button>
   );
 };
