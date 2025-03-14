@@ -34,7 +34,7 @@ export default ({ environment = "mainnet" }) => {
                   {image && (
                     <img
                       src={image}
-                      alt=""
+                      alt={`${name} logo`}
                       width={34}
                       height={34}
                       className="rounded-full size-8"

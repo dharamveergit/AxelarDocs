@@ -130,7 +130,7 @@ export default ({ environment = "mainnet" }) => {
                           {image && (
                             <img
                               src={image}
-                              alt=""
+                              alt={`${symbol} logo`}
                               width={28}
                               height={28}
                               className="rounded-full"
@@ -145,7 +145,7 @@ export default ({ environment = "mainnet" }) => {
                           {chain_data?.image && (
                             <img
                               src={chain_data.image}
-                              alt=""
+                              alt={`${chain_data?.name} logo`}
                               width={24}
                               height={24}
                               className="rounded-full"

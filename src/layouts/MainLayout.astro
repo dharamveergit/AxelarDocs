@@ -23,7 +23,11 @@ const {
   className,
 } = Astro.props;
 
-const shownTitle = title ? title : "Axelar Documentation";
+const shownTitle = title
+  ? title?.length <= 50
+    ? `${title} | Axelar Documentation`
+    : title
+  : "Axelar Documentation";
 const shownDescription =
   description ||
   "Axelar allows developers to build interchain dApps that connect to any blockchain.";

@@ -103,7 +103,7 @@ export default ({
                 {selectedData.image && (
                   <img
                     src={selectedData.image}
-                    alt=""
+                    alt={`${selectedData?.name} logo`}
                     width={24}
                     height={24}
                     className="rounded-full"
@@ -187,7 +187,7 @@ export default ({
                       {o.image && (
                         <img
                           src={o.image}
-                          alt=""
+                          alt={`${o?.name} logo`}
                           width={24}
                           height={24}
                           className="rounded-full"
