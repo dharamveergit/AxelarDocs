@@ -33,7 +33,7 @@ export default defineConfig({
       },
     }),
   ],
-  site: "https://docs.axelar.dev",
+  site: "https://axelardocsvercel.vercel.app",
   trailingSlash: "always",
   devToolbar: {
     enabled: false,
