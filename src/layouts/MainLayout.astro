@@ -70,7 +70,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta content="website" property="og:type" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    {hidden && <meta content="noindex" name="robots" />}
+    {
+      hidden ? (
+        <meta content="noindex" name="robots" />
+      ) : (
+        <meta
+          name="robots"
+          content="INDEX, FOLLOW, MAX-IMAGE-PREVIEW:LARGE, MAX-SNIPPET:-1, MAX-VIDEO-PREVIEW:-1"
+        />
+      )
+    }
+
     <link
       rel="sitemap"
       type="application/xml"
@@ -163,7 +173,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       localStorage.setItem("theme", isDark ? "dark" : "light");
       document.documentElement.setAttribute(
         "data-theme",
-        isDark ? "vitesse-dark" : "light-plus"
+        isDark ? "vitesse-dark" : "light-plus",
       );
     };
 
