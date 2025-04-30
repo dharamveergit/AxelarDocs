@@ -24,7 +24,7 @@ export default defineConfig({
     sitemap({
       priority: 0.9,
       changefreq: "daily",
-      lastmod: new Date().toISOString(),
+      lastmod: new Date(),
     }),
     tailwind(),
     partytown({
