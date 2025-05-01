@@ -23,8 +23,8 @@ const {
   hidden,
   notSidebar,
   className,
-  publishDate = new Date().toISOString().split("T")[0],
-  modifiedDate = new Date().toISOString().split("T")[0],
+  publishDate = new Date().toISOString(),
+  modifiedDate = new Date().toISOString(),
 } = Astro.props;
 
 const shownTitle = title ? title : "Axelar Documentation";
