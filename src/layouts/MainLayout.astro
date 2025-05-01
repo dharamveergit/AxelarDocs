@@ -72,16 +72,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta content="website" property="og:type" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    {
-      hidden ? (
-        <meta content="noindex" name="robots" />
-      ) : (
-        <meta
-          name="robots"
-          content="INDEX, FOLLOW, MAX-IMAGE-PREVIEW:LARGE, MAX-SNIPPET:-1, MAX-VIDEO-PREVIEW:-1"
-        />
-      )
-    }
+
+    <meta
+      name="robots"
+      content="INDEX, FOLLOW, MAX-IMAGE-PREVIEW:LARGE, MAX-SNIPPET:-1, MAX-VIDEO-PREVIEW:-1"
+    />
 
     {
       publishDate && (
