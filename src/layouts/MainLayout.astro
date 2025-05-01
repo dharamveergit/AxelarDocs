@@ -12,6 +12,8 @@ type Props = {
   hidden?: boolean;
   notSidebar?: boolean;
   className?: string;
+  publishDate?: string;
+  modifiedDate?: string;
 };
 
 const {
@@ -21,11 +23,11 @@ const {
   hidden,
   notSidebar,
   className,
+  publishDate = new Date().toISOString().split("T")[0],
+  modifiedDate = new Date().toISOString().split("T")[0],
 } = Astro.props;
 
-const shownTitle = title
-  ? title + ` | Axelar Documentation`
-  : "Axelar Documentation";
+const shownTitle = title ? title : "Axelar Documentation";
 const shownDescription =
   description ||
   "The Axelar Documentation tells you how to get started and be successful using Axelar. Axelar allows developers to build interchain dApps that connect to any blockchain. ";
@@ -80,6 +82,47 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         />
       )
     }
+
+    {
+      publishDate && (
+        <meta property="article:published_time" content={publishDate} />
+      )
+    }
+    {
+      modifiedDate && (
+        <meta property="article:modified_time" content={modifiedDate} />
+      )
+    }
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": canonicalURL.toString(),
+        },
+        headline: shownTitle,
+        description: shownDescription,
+        image: new URL(image, Astro.url).toString(),
+        author: {
+          "@type": "Organization",
+          name: "Axelar",
+          url: "https://axelar.network",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Axelar",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://axelar.network/assets/logo.png",
+          },
+        },
+        datePublished: publishDate,
+        dateModified: modifiedDate || publishDate,
+      })}
+    />
 
     <link
       rel="sitemap"
