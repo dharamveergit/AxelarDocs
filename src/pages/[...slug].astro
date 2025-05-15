@@ -23,6 +23,8 @@ export async function getStaticPaths() {
 
 const { doc } = Astro.props;
 
+console.log(doc);
+
 const pathname = Astro.url.pathname;
 const { Content, headings } = await doc.render();
 
@@ -39,7 +41,7 @@ const firstImage = extractFirstImage(doc.body);
 <MainLayout
   image={firstImage}
   title={headings.find((h) => h.depth === 1)?.text}
-  description={generateMetaDescription(doc.body)}
+  description={doc?.data?.description ?? generateMetaDescription(doc.body)}
 >
   <div class="grid grid-cols-1 lg:grid-cols-12 bg-[#FFFFFF] dark:bg-background">
     <WorldMap className="lg:col-span-9 2xl:col-span-10 w-full flex-1 ">
