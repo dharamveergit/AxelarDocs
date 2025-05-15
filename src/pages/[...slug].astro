@@ -23,8 +23,6 @@ export async function getStaticPaths() {
 
 const { doc } = Astro.props;
 
-console.log(doc);
-
 const pathname = Astro.url.pathname;
 const { Content, headings } = await doc.render();
 
